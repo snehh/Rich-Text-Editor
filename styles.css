@@ -118,3 +118,53 @@ input[type="color"]{
     margin-left: 3px;
     outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px){
+    body{
+        text-align: center;
+    }
+    .container{
+        display: inline-block;
+        margin-left: 0;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    body{
+        font-size: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .segment#edit{
+        display: none;
+    }
+}
+@media only screen and (max-width: 750px){
+    .segment#misc{
+        display: none;
+    }
+    span.finalseg{
+        float: none;
+        border-left: 1px solid #d6d6d6;
+    }
+    #more{
+        display: none;
+    }
+    .hidden{
+        display: inline;
+    }
+    span.segment{
+        border: none;
+    }
+}
