@@ -166,4 +166,7 @@ input[type="color"]{
     span.segment{
         border: none;
     }
+    h1{
+        font-weight: bold;
+    }
 }
