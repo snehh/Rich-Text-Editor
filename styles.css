@@ -5,8 +5,7 @@ body{
     overflow-x: hidden
 }
 h1{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-weight: lighter;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;;
     margin-top: 10px;
     color: #57c5e0;
 }
