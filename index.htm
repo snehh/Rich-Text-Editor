@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Rich Text Editor</title>
+</head>
+<body>
+<div class="container">
+    <h1>Rich Text Editor</h1>
+    <div class="buttoncont">
+        <span class="segment optionspan">
+            <select title="Font" onchange="execArg('fontName', this.value);" style="outline: none;">
+                <option value="Arial">Arial</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Impact">Impact</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+        </span>
+        <span class="segment optionspan">
+            <button title="Font Size"><i class="material-icons">format_size</i></button>
+            <select title="Font Size" onchange="execArg('fontSize', this.value);" style="outline: none;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </span>
+        <span class="segment">
+            <button  onclick="exec('bold');" title="Bold"><i class="material-icons">format_bold</i></button>
+            <button  onclick="exec('italic');" title="Italics"><i class="material-icons">format_italic</i></button>
+            <button  onclick="exec('underline');" title="Underline"><i class="material-icons">format_underlined</i></button>
+            <button  onclick="exec('strikeThrough');" title="Strikethrough"><i class="material-icons">strikethrough_s</i></button>
+        </span>
+        <span class="segment">
+            <input type="color" onchange="execArg('foreColor', this.value);" title="Text Color"><i class="material-icons" >text_format</i></input>
+            <input type="color" onchange="execArg('hiliteColor', this.value);" title="Highlight"><i class="material-icons">colorize</i></button>
+        </span>
+        <span class="segment">
+            <button  onclick="exec('cut');" title="Cut"><i class="material-icons">content_cut</i></button>
+            <button  onclick="exec('copy');" title="Copy"><i class="material-icons">content_copy</i></button>
+            <button  onclick="exec('paste');" title="Paste"><i class="material-icons">content_paste</i></button>
+        </span>
+        <span class="segment finalseg">
+            <button  onclick="exec('removeFormat');" title="Clear Formatting"><i class="material-icons">format_clear</i></button>
+            <button  onclick="exec('undo');" title="Undo"><i class="material-icons">undo</i></button>
+            <button  onclick="exec('redo');" title="Redo"><i class="material-icons">redo</i></button>
+            <button  onclick="dropdown();" title="More"><i class="material-icons" id="more">more_vert</i></button>
+        </span>
+    </div>
+    <div class="buttoncont dropdowncont hidden" id="drop">
+        <span class="segment">
+            <button  onclick="exec('subscript');" title="Subscript"><i class="material-icons">subscript</i></button>
+            <button  onclick="exec('superscript');" title="Superscript"><i class="material-icons">superscript</i></button>
+        </span>
+        <span class="segment">
+            <button  onclick="exec('indent');" title="Increase Indent"><i class="material-icons">format_indent_increase</i></button>
+            <button  onclick="exec('outdent');" title="Decrease Indent"><i class="material-icons">format_indent_decrease</i></button>
+        </span>
+        <span class="segment">
+            <button  onclick="exec('insertUnorderedList');" title="Bulleted List"><i class="material-icons">format_list_bulleted</i></button>
+            <button  onclick="exec('insertOrderedList');" title="Numbered List"><i class="material-icons">format_list_numbered</i></button>
+            <button  onclick="exec('insertHorizontalRule');" title="Horizontal Line"><i class="material-icons">minimize</i></button>
+        </span>
+        <span class="segment">
+            <button  onclick="exec('justifyLeft');" title="Left Align"><i class="material-icons">format_align_left</i></button>
+            <button  onclick="exec('justifyCenter');" title="Center Align"><i class="material-icons">format_align_center</i></button>
+            <button  onclick="exec('justifyLeftRight');" title="Right Align"><i class="material-icons">format_align_right</i></button>
+            <button  onclick="exec('justifyFull');" title="Justify"><i class="material-icons">format_align_justify</i></button>
+        </span>
+        <span class="segment">
+            <button  onclick="execArg('insertImage', prompt('Enter image URL'));" title="Insert Image"><i class="material-icons">insert_photo</i></button>
+            <button  onclick="execArg('createLink', prompt('Enter a link'));" title="Hyperlink"><i class="material-icons">link</i></button>
+            <button  onclick="exec('unlink');" title="Remove link"><i class="material-icons">link_off</i></button>
+        </span>
+        <span class="segment">
+            <input type="color" onchange="bgcolor(this.value);" title="Background color"><i class="material-icons">format_paint</i></input>
+            <button  onclick="exec('selectAll');" title="Select All"><i class="material-icons">select_all</i></button>
+        </span>
+    </div>
+    <iframe name="richText" id="iframe"></iframe>
+    <div class="charcount">
+        <button  onclick="sourceToggle();" title="View Source"><i class="material-icons" id="sourceicon">code</i></button>
+        <button  onclick="preview();" title="Preview"><i class="material-icons" id="previewicon">remove_red_eye</i></button>
+    </div>
+</div>
+</body>
+<script src="script.js"></script></html>
